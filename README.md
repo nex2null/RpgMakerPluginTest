@@ -1,2 +1,2 @@
 # RpgMakerPluginTest
-Testing group for some RPG Maker MV plugins
+Testing ground for some RPG Maker MV plugins
