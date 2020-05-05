@@ -16,19 +16,10 @@ Scene_Menu.prototype.commandWorkmanOptions = function () {
   SceneManager.push(Scene_Workman_Options);
 };
 
+var _Scene_Menu_createCommandWindow = Scene_Menu.prototype.createCommandWindow;
 Scene_Menu.prototype.createCommandWindow = function () {
-  this._commandWindow = new Window_MenuCommand(0, 0);
-  this._commandWindow.setHandler('item', this.commandItem.bind(this));
-  this._commandWindow.setHandler('skill', this.commandPersonal.bind(this));
-  this._commandWindow.setHandler('equip', this.commandPersonal.bind(this));
-  this._commandWindow.setHandler('status', this.commandPersonal.bind(this));
-  this._commandWindow.setHandler('formation', this.commandFormation.bind(this));
-  this._commandWindow.setHandler('options', this.commandOptions.bind(this));
+  _Scene_Menu_createCommandWindow.call(this);
   this._commandWindow.setHandler('workman', this.commandWorkmanOptions.bind(this));
-  this._commandWindow.setHandler('save', this.commandSave.bind(this));
-  this._commandWindow.setHandler('gameEnd', this.commandGameEnd.bind(this));
-  this._commandWindow.setHandler('cancel', this.popScene.bind(this));
-  this.addWindow(this._commandWindow);
 };
 
 //-----------------------------------------------------------------------------
